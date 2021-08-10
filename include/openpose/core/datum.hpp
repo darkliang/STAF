@@ -82,7 +82,10 @@ namespace op
          * Size: #people x #body parts (e.g., 18 for COCO or 15 for MPI) x 3 ((x,y) coordinates + score)
          */
         Array<float> poseKeypoints;
-
+	Array<float> getPoseKeypoints(){
+    		if(!poseKeypoints.empty()) return poseKeypoints;
+    		else return Array<float>(1,-1000);
+	}
         /**
          * People ID
          * It returns a person ID for each body pose, providing temporal consistency. The ID will be the same one

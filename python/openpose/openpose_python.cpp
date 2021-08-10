@@ -343,7 +343,8 @@ PYBIND11_MODULE(pyopenpose, m) {
         .def_readwrite("netOutputSize", &Datum::netOutputSize)
         .def_readwrite("scaleNetToOutput", &Datum::scaleNetToOutput)
         .def_readwrite("elementRendered", &Datum::elementRendered)
-        ;
+        .def("getPoseKeypoints", &Datum::getPoseKeypoints)
+       	;
 
     // Rectangle
     py::class_<Rectangle<float>>(m, "Rectangle")
